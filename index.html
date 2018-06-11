@@ -9,6 +9,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
+  <!-- google font -->
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Russo+One" rel="stylesheet">
+
   <!-- firbase -->
   <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 
@@ -22,18 +25,19 @@
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-center">When's the next train?!</h1>
-      <h3 class="text-center">Choo! Choo!</h3>
+      <h1 class="text-center" style="font-family: 'Press Start 2P', cursive;">When's the next train?!</h1>
+      <h3 class="text-center" style="font-family: 'Russo One', sans-serif;">Train Schedule</h3>
     </div>
 
+    <!-- panel containing table populated by js -->
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Current Schedule</h3>
+            <h3 class="panel-title" style="font-family: 'Russo One', sans-serif;">Current Schedule</h3>
           </div>
           <div class="panel-body">
-            <table class="table table-hover" id="trainTable">
+            <table class="table table-hover table-dark" id="trainTable">
               <thead>
                 <tr>
                   <th>Train Name</th>
@@ -45,7 +49,7 @@
               </thead>
               <tbody>
                 <!-- EMPTY -->
-                <!-- will fill with js -->
+                <!-- will be filled in with js -->
               </tbody>
             </table>
 
@@ -53,7 +57,40 @@
         </div>
       </div>
     </div>
+    
+    <br>
 
+    <!-- form used to send data to firebase db -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" style="font-family: 'Russo One', sans-serif;">Add Train</h3>
+          </div>
+          <div class="panel-body">
+            <form>
+              <div class="form-group">
+                <label for=" ">Train Name</label>
+                <input type="text" class="form-control" name="trianNameInput">
+              </div>
+              <div class="form-group">
+                <label for=" ">Destination</label>
+                <input type="text" class="form-control" name="destinationInput">
+              </div>
+              <div class="form-group">
+                <label for=" ">First Train Time (HH:mm - Military Time)</label>
+                <input type="text" class="form-control" name="firstTrainInput">
+              </div>
+              <div class="form-group">
+                <label for=" ">Frequncy (Min)</label>
+                <input type="text" class="form-control" name="FrequencyInput">
+              </div>
+              <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   </div>
@@ -62,8 +99,9 @@
   <!-- jQuery JS-->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <!-- bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <!-- external js -->
+  <script src="app.js"></script>
 </body>
 
 </html>
